@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="bg-white shadow dark:bg-gray-800">
+        <div class="container px-6 py-3 mx-auto md:flex">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">Brand</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div class="w-full md:flex md:items-center md:justify-between">
+                <div class="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
+                    <a href="#" class="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Home</a>
+                    <a href="#" class="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">About</a>
+                    <a href="#" class="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Contact</a>
+                </div>
+                
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+
+                    <input type="text" class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Search">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100 mt-4">
+        <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
+            <div class="flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-blue-600" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-center">Join us</h3>
+            <form action="/users/Login" method="post">
+                <div class="mt-4">
+                    <div>
+                        <label class="block" for="Name">Name<label>
+                                <input type="text" placeholder="Name" name="name"
+                                    class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <div class="mt-4">
+                        <label class="block" for="email">Email<label>
+                                <input type="text" placeholder="Email" name="email"
+                                    class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <div class="mt-4">
+                        <label class="block">Password<label>
+                                <input type="password" placeholder="Password" name="password"
+                                    class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <div class="mt-4">
+                        <label class="block">Confirm Password<label>
+                                <input type="number" placeholder="number" name="phone"
+                                    class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <div class="mt-4">
+                        <label class="block">Confirm Password<label>
+                                <input type="number" placeholder="age" name="age"
+                                    class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <!-- <span class="text-xs text-red-400">Password must be same!</span> -->
+                    <div class="flex">
+                        <input type="submit" value="Create account" 
+                        class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">
+                    </div>
+                    <div class="mt-6 text-grey-dark">
+                        Already have an account?
+                        <a class="text-blue-600 hover:underline" href="#">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
