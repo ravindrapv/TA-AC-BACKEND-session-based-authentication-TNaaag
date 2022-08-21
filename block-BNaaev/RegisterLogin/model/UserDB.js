@@ -18,12 +18,12 @@ userSchema.pre("save", function (next) {
     bcrypt.hash(this.password, 10, (err, hashed) => {
       if (err) return next(err);
       this.password = hashed;
-      return next();
+     next();
     });
   } else {
     next();
   }
 });
 
-var User = mongoose.model("User", userSchema);
-module.exports = User;
+module.exports = mongoose.model("User", userSchema);
+
