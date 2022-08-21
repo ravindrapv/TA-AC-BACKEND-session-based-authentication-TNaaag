@@ -17,7 +17,7 @@ router.get('/Register',(req, res, next) => {
 router.post('/Register',(req, res, next) => {
   User.create(req.body,(err, user) => {
     if (err) return next(err);
-    console.log('req.body');
+    console.log(req.body);
     res.redirect('/users/Login');
   })
 });
@@ -26,5 +26,12 @@ router.get('/Login',(req, res, next) => {
   res.render('Login');
 });
 
+
+router.post('/Login',(req, res, next) => {
+    var {email, password} = req.body;
+    if(!email || !password){
+      res.redirect("/users/Login")
+    }
+});
 module.exports = router;
 
