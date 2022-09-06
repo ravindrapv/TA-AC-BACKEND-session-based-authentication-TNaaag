@@ -3,10 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var DotEnv = require('dotenv');
+const MongoStore = require("connect-mongo")(session);
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const process = require('process');
 
 var app = express();
 
@@ -19,6 +23,16 @@ mongoose.connect(
   (err) => {
     console.log("connected", err ? false : true);
   }
+);
+
+//sessions
+app.use(
+  session({
+    secret: "this is some secrate message",
+    resave: "top message",
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
 );
 
 // view engine setup
