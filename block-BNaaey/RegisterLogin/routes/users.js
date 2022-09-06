@@ -32,10 +32,20 @@ router.post('/Login',(req, res, next) => {
     if(!email || !password){
          next();
     }
-
     console.log(email,password);
     res.redirect("/users/Login")
     
+    User.findOne({ email },(err, user) => {
+      if(err) return next(err);
+
+      if(!user) {
+        res.redirect('/users/Login');
+      }
+      //compaire password
+      user.verfiypassword(password, (err, result) => {
+        console.log(err, result);
+      })
+    })
 });
 module.exports = router;
 
